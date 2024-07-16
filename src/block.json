@@ -1,0 +1,129 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "create-block/lincoln",
+	"version": "0.1.0",
+	"title": "Lincoln Mahmud Block",
+	"category": "widgets",
+	"icon": "awards",
+	"description": "Example block scaffolded with Create Block tool.",
+	"example": {},
+	"supports": {
+		"anchor":true,
+		"align":true,
+		"ariaLabel":true,
+		"background":{
+			"backgroundImage":true,
+			"backgroundSize":true
+		},
+		"color":{
+			"gradients":true,
+			"heading":true
+		},
+		"dimensions": {
+			"aspectRatio": true,
+			"minHeight": true
+		},
+		"filter": {
+			"duotone": true
+		},
+		"lock":false,
+		"layout":{
+			"allowSwitching": true,
+			"allowSizingOnChildren": true,
+			"default": {
+				"columnCount": 1,
+				"justifyContent": "space-between",
+				"type": "grid",
+				"orientation": "vertical",
+				"flexWrap": "nowrap",
+				"verticalAlignment": "space-between"
+			}
+		},
+		"position": {
+			"sticky": true,
+			"fixed" : true
+		},
+		"shadow": true,
+		"spacing": {
+			"margin":true,
+			"padding":true
+		},
+		"typography": {
+			"fontSize": true,
+			"lineHeight": true,
+			"textAlign": true
+		}
+	},
+	"attributes":{
+		"style":{
+			"type":"object",
+			"default":{
+				"color":{
+					"duotone":["#fff","#000"]
+				},
+				"shadow":"var|preset:shadow|deep",
+				"spacing":{
+					"margin":{
+						"top":"30px"
+					},
+					"padding": {
+						"left":"20px",
+						"right":"20px"
+					}
+				}						
+			},
+			"position":{
+				"type":"sticky",
+				"top":"0px"
+			}			
+		},
+		"url":{
+			"type":"string",
+			"source": "attribute",
+			"selector": "img",
+			"attribute": "src"
+		},
+		"title":{
+			"type":"string"
+		},
+		"images":{
+			"type":"array",
+			"source": "query",
+			"selector": "img",
+			"query": {
+				"url":{
+					"type":"string",
+					"source":"attribute",
+					"attribute":"src"
+				},
+				"alt":{
+					"type":"string",
+					"source":"attribute",
+					"attribute":"alt"
+				}
+			}
+		}
+	},
+	"selectors": {
+		"duotone":".wp-block-image img",
+		"border":{"color": "red","radius": "5px","style": "dotted","width": "2px"}
+	},
+	"styles": [
+		{
+			"name": "default",
+			"label": "Default",
+			"isDefault": true
+		},
+		{
+			"name": "drop-cap",
+			"label":"Drop Cap"
+		}
+	],
+	"keywords": ["lincoln","dynamic block","custom block", "theme","plugin","text","Aziz"],
+	"textdomain": "lincoln",
+	"editorScript": "file:./index.js",
+	"editorStyle": "file:./index.css",
+	"style": "file:./style-index.css",
+	"viewScript": "file:./view.js"
+}
